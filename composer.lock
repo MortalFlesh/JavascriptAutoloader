@@ -1,0 +1,36 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "a70c8ee228c462fb65e23af8b9058426",
+    "packages": [
+        {
+            "name": "rgrove/jsmin-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rgrove/jsmin-php.git",
+                "reference": "origin/master"
+            },
+            "type": "library",
+            "time": "2014-01-15 17:37:55"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "rgrove/jsmin-php": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

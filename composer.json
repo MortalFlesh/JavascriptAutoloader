@@ -1,0 +1,27 @@
+{
+    "name": "mf/javascript-autoloader",
+    "description": "It allows you to simly autoload javascript files with PHP.",
+    "authors": [
+        {
+            "name": "MortalFlesh",
+            "email": "mortal_flesh@seznam.cz"
+        }
+    ],
+	"repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "rgrove/jsmin-php",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/rgrove/jsmin-php.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "rgrove/jsmin-php": "dev-master"
+    }
+}
