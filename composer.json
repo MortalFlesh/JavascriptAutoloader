@@ -7,6 +7,9 @@
             "email": "mortal_flesh@seznam.cz"
         }
     ],
+	"autoload": {
+        "psr-0": {"MF\\JavascriptAutoloader\\": "src/"}
+    },
 	"repositories": [
         {
             "type": "package",
