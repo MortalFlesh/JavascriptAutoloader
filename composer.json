@@ -8,7 +8,7 @@
         }
     ],
 	"autoload": {
-        "psr-0": {"MF\\JavascriptAutoloader\\": "src/"}
+        "psr-4": {"MF\\": "src/"}
     },
 	"repositories": [
         {

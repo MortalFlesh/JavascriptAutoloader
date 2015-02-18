@@ -2,27 +2,28 @@
 <head>
 	<?php
 
-	require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/vendor/rgrove/jsmin-php/jsmin.php';
 
-	$rootDir = __DIR__;
+    $rootDir = __DIR__;
 
-	$baseUrl = '//localhost/';
-	//$baseUrl = './';
-	//$baseUrl = '/';
-	//$baseUrl = '//project.com/';
-	//$baseUrl = '//localhost/project/';
+    $baseUrl = './';
+    //$baseUrl = '//localhost/';
+    //$baseUrl = '/';
+    //$baseUrl = '//project.com/';
+    //$baseUrl = '//localhost/project/';
 
-	$cacheDir = $rootDir . DIRECTORY_SEPARATOR . 'cache';
+    $cacheDir = $rootDir . DIRECTORY_SEPARATOR . 'cache';
 
-	$javascriptAutoloader = new \MF\JavascriptAutoloader\JavascriptAutoloader($rootDir, $baseUrl);
-	$javascriptAutoloader
-		->compileToOneFile($cacheDir)
-		->minifyOutput()
-		->denyCache()
-		->addDirectory('scripts')
-		->autoload();
+    $javascriptAutoloader = new \MF\JavascriptAutoloader\JavascriptAutoloader($rootDir, $baseUrl);
+    $javascriptAutoloader
+        ->compileToOneFile($cacheDir)
+        ->minifyOutput()
+        ->denyCache()
+        ->addDirectory('scripts')
+        ->autoload();
 
-	?>
+    ?>
 	</head>
 	<body>
 	</body>
