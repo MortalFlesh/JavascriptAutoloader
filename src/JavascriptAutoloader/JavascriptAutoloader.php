@@ -34,13 +34,15 @@ class JavascriptAutoloader
     /**
      * @param string $rootDir Project root dir (full path from root)
      * @param string $baseUrl Project base URL
+     * @param Helper $helper
+     * @param Render $render
      */
-    public function __construct($rootDir, $baseUrl)
+    public function __construct($rootDir, $baseUrl, Helper $helper = null, Render $render = null)
     {
-        $this->helper = new Helper();
+        $this->helper = isset($helper) ? $helper : new Helper();
 
         $this->rootDir = $this->helper->addDirSeparatorAtEnd($rootDir);
-        $this->render = new Render($baseUrl);
+        $this->render = isset($render) ? $render : new Render($baseUrl, $this->helper);
     }
 
     /** @return JavascriptAutoloader */
@@ -56,7 +58,7 @@ class JavascriptAutoloader
      */
     public function compileToOneFile($cacheDirPath)
     {
-        return $this->setCompileToOneFile(new Compiler($this->rootDir, $cacheDirPath));
+        return $this->setCompileToOneFile(new Compiler($this->rootDir, $cacheDirPath, $this->helper));
     }
 
     /**

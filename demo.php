@@ -1,6 +1,6 @@
 <html>
 <head>
-	<?php
+    <?php
 
     require_once __DIR__ . '/vendor/autoload.php';
 
@@ -23,7 +23,7 @@
         ->autoload();
 
     ?>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>

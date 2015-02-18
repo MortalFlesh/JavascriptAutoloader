@@ -4,6 +4,8 @@ namespace MF\JavascriptAutoloader;
 
 class Helper
 {
+    const CLASS_NAME = __CLASS__;
+
     const ENCODING = 'utf-8';
 
     /**

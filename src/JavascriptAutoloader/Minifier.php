@@ -6,6 +6,8 @@ use JShrink\Minifier as JShrinkMinifier;
 
 class Minifier
 {
+    const CLASS_NAME = __CLASS__;
+
     /** @var string */
     private $rootDir;
 
@@ -21,6 +23,6 @@ class Minifier
      */
     public function minify($scriptContents)
     {
-		return JShrinkMinifier::minify($scriptContents);
+        return JShrinkMinifier::minify($scriptContents);
     }
 }

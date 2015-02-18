@@ -2,10 +2,12 @@
 
 namespace MF\JavascriptAutoloader;
 
-use MF\JavascriptAutoloader\Exceptions\CompilerCacheDirNotFoundException;
+use MF\JavascriptAutoloader\Exceptions\CompilerFolderNotFoundException;
 
 class Compiler
 {
+    const CLASS_NAME = __CLASS__;
+
     const SCRIPT_NAME = 'script';
     const MINIFIED_SUFFIX = '-min';
     const SCRIPTS_DELIMETER = ';';
@@ -13,7 +15,8 @@ class Compiler
     /** @var Minifier */
     private $Minifier;
 
-    private $rootDir, $cacheFolderPath;
+    private $rootDir;
+    private $cacheFolderPath;
     private $scripts = array();
     private $compiledScriptName = '';
     private $cacheAllowed = true;
@@ -21,17 +24,17 @@ class Compiler
     /**
      * @param string $rootDir
      * @param string $cacheFolderPath
+     * @param Helper $helper
      */
-    public function __construct($rootDir, $cacheFolderPath)
+    public function __construct($rootDir, $cacheFolderPath, Helper $helper)
     {
         $this->rootDir = $rootDir;
         $cacheFolderPath = str_replace(array($this->rootDir, '\\'), array('', '/'), $cacheFolderPath);
 
-        $helper = new Helper();
         $this->cacheFolderPath = $helper->addDirSeparatorAtEnd($cacheFolderPath, '/');
 
         if (empty($this->cacheFolderPath) || !file_exists($this->rootDir . $this->cacheFolderPath)) {
-            throw new CompilerCacheDirNotFoundException($this->cacheFolderPath);
+            throw new CompilerFolderNotFoundException($this->cacheFolderPath);
         }
     }
 

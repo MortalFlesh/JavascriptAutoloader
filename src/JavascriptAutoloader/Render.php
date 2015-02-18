@@ -4,16 +4,20 @@ namespace MF\JavascriptAutoloader;
 
 class Render
 {
+    const CLASS_NAME = __CLASS__;
+
     /** @var string */
     private $baseUrl;
 
     /** @var bool */
     private $cacheAllowed = true;
 
-    /** @param string $baseUrl */
-    public function __construct($baseUrl)
+    /**
+     * @param string $baseUrl
+     * @param Helper $helper
+     */
+    public function __construct($baseUrl, Helper $helper)
     {
-        $helper = new Helper();
         $this->baseUrl = $helper->addDirSeparatorAtEnd($baseUrl, '/');
     }
 
@@ -38,7 +42,7 @@ class Render
         if (!$this->cacheAllowed) {
             $scriptUrl .= '?t=' . time();
         }
-        ?><script type="text/javascript" src="<?=$scriptUrl?>"></script><?php
+        ?><script type="text/javascript" src="<?= $scriptUrl ?>"></script><?php
 
     }
 }
