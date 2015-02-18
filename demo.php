@@ -3,7 +3,6 @@
 	<?php
 
     require_once __DIR__ . '/vendor/autoload.php';
-    require_once __DIR__ . '/vendor/rgrove/jsmin-php/jsmin.php';
 
     $rootDir = __DIR__;
 

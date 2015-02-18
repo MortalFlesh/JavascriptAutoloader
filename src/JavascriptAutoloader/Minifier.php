@@ -2,7 +2,7 @@
 
 namespace MF\JavascriptAutoloader;
 
-use JSMin;
+use JShrink\Minifier as JShrinkMinifier;
 
 class Minifier
 {
@@ -21,6 +21,6 @@ class Minifier
      */
     public function minify($scriptContents)
     {
-        return JSMin::minify($scriptContents);
+		return JShrinkMinifier::minify($scriptContents);
     }
 }
